@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Expenses chart component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    body {
+      background: hsl(27, 66%, 92%);
+      margin-top: 100px;
+    }
+
+    .card-1 {
+      margin-top: 500px;
+      max-width: 300px;
+      max-height: 56px !important;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+      margin-bottom: 10px;
+      padding-bottom: 21px;
+      padding-top: 5px;
+      background-color: hsl(10, 79%, 65%);
+      border: none;
+      border-radius: 15px;
+    }
+
+    .balance {
+      padding-left: 15px;
+
+      float: left;
+      color: white;
+    }
+
+    .my-balance {
+      font-size: 12px;
+    }
+
+    .total-balance {
+      font-size: 16px;
+    }
+
+    .logo {
+      padding-top: 15px;
+      height: 30px;
+      padding-left: 160px;
+    }
+
+    .card-2 {
+
+      height: 500px;
+      max-width: 300px;
+      margin: auto;
+      margin-top: 10px;
+      text-align: center;
+      font-family: arial;
+      background: white;
+      border: none;
+      border-radius: 15px;
+    }
+
+    .title {
+      float: left;
+      padding: 15px;
+      color: black;
+      font-size: 18px;
+    }
+
+    .dates {
+      display: flex;
+      justify-content: center;
+      padding-top: 150px;
+      padding-right: 85px;
+      padding-left: 80px;
+      margin-bottom: 50px;
+      font-size: 12px;
+    }
+
+    .dates>div {
+      margin: 1px;
+      padding: 2px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 22px;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="card-1">
+    <div class="balance">
+      <p class="my-balance">My balance</p>
+      <p class="total-balance">
+        $921.48</p>
+    </div>
+    <img class="logo" src="images/logo.svg" alt="logo">
+
+
+
+  </div>
+  <div class="card-2">
+    <div class="spending">
+      <h1 class="title">Spending - Last 7 days</h1>
+    </div>
+    <div class="dates">
+      <div class="monday">
+        mon
+      </div>
+      <div class="tuesday">
+        tue
+      </div>
+      <div class="wed">
+        wed
+      </div>
+      <div class="thurs">
+        thu
+      </div>
+      <div class="fri">
+        fri
+      </div>
+      <div class="sat">
+        sat
+      </div>
+      <div class="sun">
+        sun
+      </div>
+    </div>
+
+    <div class="total">
+
+      Total this month
+      $478.33
+      <div class="last">
+        +2.4%
+        from last month
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!DOCTYPE html>
+  <html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Our superheroes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <header>
+
+    </header>
+
+    <section>
+
+    </section>
+
+    <script>
+
+      async function populate() {
+
+        const requestURL = 'https://github.com/sebframpton/oojs/blob/main/data.json';
+        const request = new Request(requestURL);
+
+        const response = await fetch(request);
+        const superHeroes = await response.json();
+
+        populateHeader(superHeroes);
+        populateHeroes(superHeroes);
+
+      }
+
+      function populateHeader(obj) {
+        const header = document.querySelector('header');
+        const myH1 = document.createElement('h1');
+        myH1.textContent = obj.squadName;
+        header.appendChild(myH1);
+
+        const myPara = document.createElement('p');
+        myPara.textContent = `Hometown: ${obj.homeTown} // Formed: ${obj.formed}`;
+        header.appendChild(myPara);
+      }
+
+      function populateHeroes(obj) {
+        const section = document.querySelector('section');
+        const heroes = obj.members;
+
+        for (const hero of heroes) {
+          const myArticle = document.createElement('article');
+          const myH2 = document.createElement('h2');
+          const myPara1 = document.createElement('p');
+          const myPara2 = document.createElement('p');
+          const myPara3 = document.createElement('p');
+          const myList = document.createElement('ul');
+
+          myH2.textContent = hero.name;
+          myPara1.textContent = `Secret identity: ${hero.secretIdentity}`;
+          myPara2.textContent = `Age: ${hero.age}`;
+          myPara3.textContent = 'Superpowers:';
+
+          const superPowers = hero.powers;
+          for (const power of superPowers) {
+            const listItem = document.createElement('li');
+            listItem.textContent = power;
+            myList.appendChild(listItem);
+          }
+
+          myArticle.appendChild(myH2);
+          myArticle.appendChild(myPara1);
+          myArticle.appendChild(myPara2);
+          myArticle.appendChild(myPara3);
+          myArticle.appendChild(myList);
+
+          section.appendChild(myArticle);
+        }
+      }
+
+      populate();
+
+    </script>
+  </body>
+
+  </html>
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+
+</html>
